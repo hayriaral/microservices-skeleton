@@ -22,5 +22,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
+
+        <!-- The JAXB modules which the Eureka server depends upon were removed in JDK 11.
+        If you intend to use JDK 11 when running a Eureka server you must include it. -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+        </dependency>
     </dependencies>
 </project>

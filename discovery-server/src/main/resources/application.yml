@@ -6,9 +6,14 @@ server:
   port: 8761
 
 eureka:
+  instance:
+    hostname: localhost
+
   client:
     register-with-eureka: false #to avoid register itself
     fetch-registry: false #to avoid register itself
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
-  instance:
-    hostname: localhost
+# Common application properties
+# https://docs.spring.io/spring-cloud-netflix/docs/current/reference/html/appendix.html
